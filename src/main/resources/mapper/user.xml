@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zx.springboot.demo.mapper.UserMapper">
+    <select id="getUser" resultType="com.zx.springboot.demo.entity.User">
+        select * from user
+    </select>
+
+    <delete id="deleteUser" parameterType="Integer">
+        delete from user where id =#{id}
+    </delete>
+
+    <insert id="addUser" parameterType="com.zx.springboot.demo.entity.User">
+        insert into user(id,name,age)values(#{id},#{name},#{age})
+    </insert>
+</mapper>
